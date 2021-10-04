@@ -9,7 +9,7 @@ soc:
 	./build.sh -e soc -b -s -y -v '--timescale "1ns/1ns" -Wno-fatal --trace' -a "-i $(BIN) --dump-wave -b 0 -e 50000"
 
 run:
-	cd ./projects/soc/build_test && ./emu -i $(BIN) --dump-wave -b 0 -e 50000
+	cd ./projects/soc/build_test && ./emu -i $(BIN)
 
 link:
 	-rm -rf libraries
@@ -20,6 +20,6 @@ link:
 	ln -s $(HOME)/Zhoushan/DRAMsim3 ./libraries/DRAMsim3
 
 clean:
-	./build/sh -e soc -c
+	./build.sh -e soc -c
 
 .PHONY: soc run link clean
