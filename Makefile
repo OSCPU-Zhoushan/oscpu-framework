@@ -1,6 +1,7 @@
 default: soc
-CASE=hello
-BIN=ysyxSoC/flash/$(CASE)-flash.bin
+CASE=rtthread
+TYPE=loader
+BIN=ysyxSoC/$(TYPE)/$(CASE)-$(TYPE).bin
 HOME=/home/lishi
 
 soc:
