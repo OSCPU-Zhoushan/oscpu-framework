@@ -5,9 +5,8 @@ BIN=ysyxSoC/$(TYPE)/$(CASE)-$(TYPE).bin
 HOME=/home/lishi
 
 soc:
-	cd ../Zhoushan && $(MAKE) soc
 	cp ../Zhoushan/build/ysyx_000000.v ./projects/soc/vsrc
-	./build.sh -e soc -b -s -y -v '--timescale "1ns/1ns" -Wno-fatal --trace' -a "-i $(BIN) --dump-wave -b 0 -e 50000"
+	./build.sh -e soc -b -y -v '--timescale "1ns/1ns" -Wno-fatal --trace'
 
 run:
 	cd ./projects/soc/build_test && ./emu -i $(BIN)
